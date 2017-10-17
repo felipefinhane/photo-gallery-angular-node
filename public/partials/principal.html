@@ -1,0 +1,21 @@
+<div class="jumbotron">
+    <h1 class="text-center">Photo gallery</h1>
+    <h4 class="text-right">AngularJS</h4>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form action="">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a href="/fotos/new" class="btn btn-primary">Nova Foto</a>
+                </span>
+                <input ng-model="filtro" ng-model-options="{debounce: 500}" class="form-control" type="text" placeholder="Filtrar" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter : filtro" titulo="{{foto.titulo}}">
+        <minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}"></minha-foto>
+    </meu-painel>
+</div>
